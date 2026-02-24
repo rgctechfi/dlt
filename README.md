@@ -1,5 +1,5 @@
 <h1 align="center">
-  <span>**𝙙𝙖𝙩𝙖 𝙡𝙤𝙖𝙙 𝙩𝙤𝙤𝙡**</span>
+  <span>𝙙𝙖𝙩𝙖 𝙡𝙤𝙖𝙙 𝙩𝙤𝙤𝙡</span>
   <br />
   <img src="./ressources/pictures/dlt_logo.png" alt="dlt logo" width="42" />
 </h1>
