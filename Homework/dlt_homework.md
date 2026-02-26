@@ -8,6 +8,8 @@ You've seen how to build a pipeline with a scaffolded source. Now it's your turn
 * [dlt Pipeline Overview Notebook (Google Colab)](https://colab.research.google.com/github/anair123/data-engineering-zoomcamp/blob/workshop/dlt_2026/cohorts/2026/workshops/dlt/dlt_Pipeline_Overview.ipynb)
 * [Workshop registration page](https://luma.com/hzis1yzp)
 
+---
+
 ## The Challenge
 
 For this homework, build a dlt pipeline that loads NYC taxi trip data from a custom API into DuckDB and then answer some questions using the loaded data.
@@ -22,6 +24,8 @@ You'll be working with **NYC Yellow Taxi trip data** from a custom API (not avai
 | Format | Paginated JSON |
 | Page Size | 1,000 records per page |
 | Pagination | Stop when an empty page is returned |
+
+---
 
 ## Setup Instructions
 
@@ -140,15 +144,9 @@ python taxi_pipeline.py
 
 ---
 
-## Questions
+## Questions & Answers
 
-Once your pipeline has run successfully, use the methods covered in the workshop to investigate the following:
-
-- **dlt Dashboard**: `dlt pipeline taxi_pipeline show`
-- **dlt MCP Server**: Ask the agent questions about your pipeline
-- **Marimo Notebook**: Build visualizations and run queries
-
-We challenge you to try out the different methods explored in the workshop when answering these questions to see what works best for you. Feel free to share your thoughts on what worked (or didn't) in your submission!
+Once your pipeline has run successfully, use the methods covered in the workshop to investigate the following questions.
 
 ### Question 1: What is the start date and end date of the dataset?
 
@@ -157,6 +155,18 @@ We challenge you to try out the different methods explored in the workshop when 
 - 2024-01-01 to 2024-02-01
 - 2024-06-01 to 2024-07-01
 
+Selected answer:
+
+```text
+Justification: [Your answer and justification here]
+```
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Answer-[SELECT YOUR ANSWER]-darkgreen" alt="Answer Q1">
+</p>
+
+---
+
 ### Question 2: What proportion of trips are paid with credit card?
 
 - 16.66%
@@ -164,12 +174,47 @@ We challenge you to try out the different methods explored in the workshop when 
 - 36.66%
 - 46.66%
 
+Selected answer:
+
+```text
+Justification: [Your answer and justification here]
+```
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Answer-[SELECT YOUR ANSWER]-darkgreen" alt="Answer Q2">
+</p>
+
+---
+
 ### Question 3: What is the total amount of money generated in tips?
 
 - $4,063.41
 - $6,063.41
 - $8,063.41
 - $10,063.41
+
+Selected answer:
+
+```text
+Justification: [Your answer and justification here]
+```
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Answer-[SELECT YOUR ANSWER]-darkgreen" alt="Answer Q3">
+</p>
+
+---
+
+## Investigation Methods
+
+You can use any of these methods to answer the questions:
+
+- **dlt Dashboard**: `dlt pipeline taxi_pipeline show`
+- **dlt MCP Server**: Ask the agent questions about your pipeline
+- **Marimo Notebook**: Build visualizations and run queries
+- **DuckDB Direct**: Query the local database directly
+
+We challenge you to try out the different methods explored in the workshop when answering these questions to see what works best for you. Feel free to share your thoughts on what worked (or didn't) in your submission!
 
 
 ### Resources
@@ -182,10 +227,12 @@ We challenge you to try out the different methods explored in the workshop when 
 
 ---
 
-## Submitting the solutions
+## Submitting the Solutions
 
 - Form for submitting: https://courses.datatalks.club/de-zoomcamp-2026/homework/dlt
 - Deadline: See the website
+
+---
 
 ## Tips
 
@@ -193,6 +240,7 @@ We challenge you to try out the different methods explored in the workshop when 
 - If the agent gets stuck, paste the error into the chat and let it debug.
 - Use the dlt MCP server to ask questions about your pipeline metadata.
 
+---
 
 ## Learning in Public
 

@@ -5,5 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "dlt>=1.22.1",
+    "dlt[duckdb,workspace]>=1.22.1",
+    "numpy>=2.4.2",
+    "pandas>=3.0.1",
 ]

@@ -1,13 +1,19 @@
 {
+  // MCP (Model Context Protocol) servers configuration for VS Code
   "servers": {
+    // Define the 'dlt' MCP server for dlt (data load tool) integration
     "dlt": {
+      // Use 'uv' as the command runner (fast Python package installer and runner)
       "command": "uv",
       "args": [
         "run",
+        // Include dlt with duckdb support as a dependency
         "--with",
         "dlt[duckdb]",
+        // Include dlt-mcp package with search functionality
         "--with",
         "dlt-mcp[search]",
+        // Run the dlt_mcp module as a Python module
         "python",
         "-m",
         "dlt_mcp"
