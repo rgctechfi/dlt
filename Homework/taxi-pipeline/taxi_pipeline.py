@@ -1,5 +1,3 @@
-"""Template for building a `dlt` pipeline to ingest data from a REST API."""
-
 import dlt
 from dlt.sources.rest_api import rest_api_resources
 from dlt.sources.rest_api.typing import RESTAPIConfig
@@ -13,6 +11,7 @@ def taxi_pipeline_rest_api_source():
         "client": {
             # Base URL for the REST API
             "base_url": "https://us-central1-dlthub-analytics.cloudfunctions.net/data_engineering_zoomcamp_api",
+            #https://jsonformatter.org/json-viewer
         },
         "resources": [
             # Define resources for taxi trip data endpoints

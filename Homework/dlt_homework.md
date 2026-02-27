@@ -10,140 +10,6 @@ You've seen how to build a pipeline with a scaffolded source. Now it's your turn
 
 ---
 
-## The Challenge
-
-For this homework, build a dlt pipeline that loads NYC taxi trip data from a custom API into DuckDB and then answer some questions using the loaded data.
-
-## Data Source
-
-You'll be working with **NYC Yellow Taxi trip data** from a custom API (not available as a dlt scaffold). This dataset contains records of individual taxi trips in New York City.
-
-| Property | Value |
-|----------|-------|
-| Base URL | `https://us-central1-dlthub-analytics.cloudfunctions.net/data_engineering_zoomcamp_api` |
-| Format | Paginated JSON |
-| Page Size | 1,000 records per page |
-| Pagination | Stop when an empty page is returned |
-
----
-
-## Setup Instructions
-
-Since this API is custom (not one of the scaffolds in dlt workspace), the setup is slightly different.
-
-### Step 1: Create a New Project (or Reuse Your Demo Project)
-
-If you already created a project folder while following along with the workshop demo, you can reuse that folder. Otherwise, create a new one:
-
-```bash
-mkdir taxi-pipeline
-cd taxi-pipeline
-```
-
-Open this folder in Cursor (or your preferred agentic IDE).
-
-### Step 2: Set Up the dlt MCP Server (If Not Already Done)
-
-Choose the setup for your IDE:
-
-Cursor - go to **Settings → Tools & MCP → New MCP Server** and add:
-
-```json
-{
-  "mcpServers": {
-    "dlt": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--with",
-        "dlt[duckdb]",
-        "--with",
-        "dlt-mcp[search]",
-        "python",
-        "-m",
-        "dlt_mcp"
-      ]
-    }
-  }
-}
-```
-
-VS Code (Copilot) - create `.vscode/mcp.json` in your project folder:
-
-```json
-{
-  "servers": {
-    "dlt": {
-      "command": "uv",
-      "args": [
-        "run",
-        "--with",
-        "dlt[duckdb]",
-        "--with",
-        "dlt-mcp[search]",
-        "python",
-        "-m",
-        "dlt_mcp"
-      ]
-    }
-  }
-}
-```
-
-Claude Code - run in your terminal:
-
-```bash
-claude mcp add dlt -- uv run --with "dlt[duckdb]" --with "dlt-mcp[search]" python -m dlt_mcp
-```
-
-This enables the dlt MCP server, giving the AI access to dlt documentation, code examples, and your pipeline metadata.
-
-### Step 3: Install dlt
-
-```bash
-pip install "dlt[workspace]"
-```
-
-### Step 4: Initialize the Project
-
-```bash
-dlt init dlthub:taxi_pipeline duckdb
-```
-
-You can name the project whatever you like. Since this API has no scaffold, the command will create:
-- The dlt project files
-- Cursor rules for AI assistance
-
-**But no YAML file with API metadata.** You will need to provide the API information yourself.
-
-### Step 5: Prompt the Agent
-
-Now use your AI assistant to build the pipeline. You'll need to provide the API details in your prompt since there's no scaffold.
-
-Here's an example to get you started:
-
-```
-Build a REST API source for NYC taxi data.
-
-API details:
-- Base URL: https://us-central1-dlthub-analytics.cloudfunctions.net/data_engineering_zoomcamp_api
-- Data format: Paginated JSON (1,000 records per page)
-- Pagination: Stop when an empty page is returned
-
-Place the code in taxi_pipeline.py and name the pipeline taxi_pipeline.
-Use @dlt rest api as a tutorial.
-```
-
-### Step 6: Run and Debug
-
-Run your pipeline and iterate with the agent until it works:
-
-```bash
-python taxi_pipeline.py
-```
-
----
-
 ## Questions & Answers
 
 Once your pipeline has run successfully, use the methods covered in the workshop to investigate the following questions.
@@ -159,10 +25,16 @@ Selected answer:
 
 ```text
 Justification: [Your answer and justification here]
+
+dates = yellow_trips.aggregate([
+    yellow_trips.pickup_datetime.min(),
+    yellow_trips.pickup_datetime.max()
+]).execute()
+print('Q1 - Dates:', dates)
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-[SELECT YOUR ANSWER]-darkgreen" alt="Answer Q1">
+  <img src="https://img.shields.io/badge/Answer-(2009-06-01 to 2009-07-01)-darkgreen" alt="Answer Q1">
 </p>
 
 ---
@@ -181,7 +53,7 @@ Justification: [Your answer and justification here]
 ```
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Answer-[SELECT YOUR ANSWER]-darkgreen" alt="Answer Q2">
+  <img src="https://img.shields.io/badge/Answer-26.66%-darkgreen" alt="Answer Q2">
 </p>
 
 ---
