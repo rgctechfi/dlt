@@ -27,7 +27,7 @@ This repository now covers two complementary tracks:
 |------|---------|
 | `workshop.md` | Full workshop instructions (Open Library) |
 | `workshop/dlt_Pipeline_Overview.ipynb` | Intro notebook about dlt pipeline concepts |
-| `Homework/dlt_homework.md` | Homework questions and selected answers |
+| `Homework/README.md` | Homework questions and selected answers |
 | `Homework/scripts/taxi_pipeline.py` | dlt pipeline for taxi API -> DuckDB |
 | `Homework/scripts/explore_api.py` | Quick endpoint inspection helper |
 | `Homework/notebooks/homework_notebook.ipynb` | Notebook analysis for homework |
@@ -88,7 +88,7 @@ dlt pipeline taxi_pipeline show
 dlt pipeline taxi_pipeline query "SELECT COUNT(*) AS nb_rows FROM taxi_dataset.taxi_trip;"
 ```
 
-Then use [Homework/dlt_homework.md](./Homework/dlt_homework.md) and the notebook artifacts to validate answers:
+Then use [Homework/README.md](./Homework/README.md) and the notebook artifacts to validate answers:
 - `Homework/notebooks/homework_notebook.ipynb`
 - `Homework/ressources/*.png`
 
@@ -115,7 +115,7 @@ marimo run marimo_test_notebook.py
 | dlt Dashboard Docs | [dlthub.com/docs/general-usage/dashboard](https://dlthub.com/docs/general-usage/dashboard) |
 | marimo + dlt Guide | [dlthub.com/docs/general-usage/dataset-access/marimo](https://dlthub.com/docs/general-usage/dataset-access/marimo) |
 | Open Library API | [openlibrary.org/developers/api](https://openlibrary.org/developers/api) |
-| Homework Instructions (repo) | [Homework/dlt_homework.md](./Homework/dlt_homework.md) |
+| Homework Instructions (repo) | [Homework/README.md](./Homework/README.md) |
 | Workshop Instructions (repo) | [workshop.md](./workshop.md) |
 
 ---
